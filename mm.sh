@@ -3,7 +3,7 @@
 hostname=$(hostname -f)
 
 get_mysqld_sockets() {
-	ps uaxwww | grep -E 'mysqld.+--socket' | grep -Eo '[\/a-z-]+\.sock+'
+	netstat -ln | awk '/mysql(.*)?\.sock/ { print $9 }'
 }
 
 check_alive() {
