@@ -20,7 +20,7 @@ password=zabbix_pass
 ## Installing
 - Create user for monitoring, e.g.
 ```
-GRANT PROCESS, REPLICATION CLIENT ON *.* TO ‘zabbix’@’localhost’
+GRANT PROCESS, REPLICATION CLIENT ON *.* TO 'zabbix'@'localhost' IDENTIFIED BY 'SECRETPASS'
 ```
 - Put mm.sh into /etc/zabbix folder
 - Put mm.items into /etc/zabbix folder
@@ -29,5 +29,6 @@ GRANT PROCESS, REPLICATION CLIENT ON *.* TO ‘zabbix’@’localhost’
 chmod +x /etc/zabbix/mm.sh
 ```
 - Put mm.conf into /etc/zabbix/zabbix_agentd.conf.d/
+- Uncomment & set Server for Actove checks in zabbix_agentd.conf
 - Import template to zabbix - mm.xml
 - Apply “Template App Mysql Monitoring” template to host
