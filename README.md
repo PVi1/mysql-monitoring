@@ -29,6 +29,7 @@ GRANT PROCESS, REPLICATION CLIENT ON *.* TO 'zabbix'@'localhost' IDENTIFIED BY '
 chmod +x /etc/zabbix/mm.sh
 ```
 - Put mm.conf into /etc/zabbix/zabbix_agentd.conf.d/
-- Uncomment & set Server for Actove checks in zabbix_agentd.conf
+- Uncomment & set Server for Active checks in zabbix_agentd.conf
+- Check if Hostname value in zabbix_agentd.conf and /etc/hosts matches
 - Import template to zabbix - mm.xml
 - Apply “Template App Mysql Monitoring” template to host
